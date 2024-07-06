@@ -11,7 +11,6 @@ print(dataset.head(5))
 dataset.shape
 
 # Data Preprocessing
-# Now, we categorize the features depending on their datatype (int, float, object) and then calculate the number of them. 
 obj = (dataset.dtypes == 'object')
 object_cols = list(obj[obj].index)
 print("Categorical variables:",len(object_cols))
@@ -25,9 +24,6 @@ fl_cols = list(fl[fl].index)
 print("Float variables:",len(fl_cols))
 
 # Exploratory Data Analysis
-# EDA refers to the deep analysis of data so as to discover different patterns and spot anomalies. Before making inferences from data it is essential to examine all your variables.
-
-# So here let’s make a heatmap using seaborn library.
 plt.figure(figsize=(12, 6))
 sns.heatmap(dataset.corr(),
             cmap = 'BrBG',
@@ -59,7 +55,6 @@ for col in object_cols:
 
 
 # Data Cleaning
-# Data Cleaning is the way to improvise the data or remove incorrect, corrupted or irrelevant data.
 dataset.drop(['Id'],
              axis=1,
              inplace=True)
